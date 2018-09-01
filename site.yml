@@ -1,0 +1,8 @@
+- hosts: servers
+  become: yes
+  gather_facts: no
+  pre_tasks:
+    - name: 'install python2'
+      raw: apt-get --yes install python python-simplejson
+  tasks:
+    - include: package.yml
